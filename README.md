@@ -1,2 +1,2 @@
-# docker-openssl
-🔑OpenSSL container to create certificate and keys
+# Docker OpenSSL
+OpenSSL container to create certificates and keys.
