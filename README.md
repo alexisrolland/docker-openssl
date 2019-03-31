@@ -1,5 +1,5 @@
 # Docker OpenSSL
-OpenSSL container to create certificates and keys. It is based on the following tutorial:
+OpenSSL container to create certificates and keys. This allows you to use OpenSSL without needing to install it on your computer and regardless your are on Linux or Windows. It is based on the following tutorial:
 https://loglevel-blog.com/how-to-create-self-signed-certificate-with-openssl-and-docker
 
 # Create Docker Container
