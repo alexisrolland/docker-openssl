@@ -20,4 +20,7 @@ Once connected to the container, execute the following commands depending on you
 ```
 # Create cert.pem and key.pem files for SSL encryption
 $ req -x509 -newkey rsa:4096 -nodes -out cert.pem -keyout key.pem -days 365
+
+# You have some other commands in mind?
+# Feel free to do a pull request
 ```
