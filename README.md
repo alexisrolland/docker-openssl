@@ -11,8 +11,13 @@ $ cd docker-openssl
 $ docker build -t docker-openssl:latest .
 
 # Run Docker container in interactive mode
-# Make sure you replace <your_path> with your target folder, this is where files will be created
+# Make sure you replace `<your_path>` with your target folder, this is where files will be created.
+
+# For Docker Desktop (Windows Pro)
 $ docker run -it --rm -v "C:\your_path:/openssl-certs" docker-openssl
+
+# For Docker Toolbox (Windows Home)
+$ docker run -it --rm -v "/c/your_path:/openssl-certs" docker-openssl
 ```
 
 # Generate Keys
