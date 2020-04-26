@@ -9,7 +9,7 @@ Docker must be configured to run Linux Docker containers. If it's not the case a
 
 # Create Docker Container
 
-```
+```shell
 # Change directory to project folder
 $ cd docker-openssl
 
@@ -30,7 +30,7 @@ $ docker run -it --rm -v "/c/your_path:/openssl-certs" docker-openssl
 
 Once connected to the container, execute the following commands depending on your needs:
 
-```
+```shell
 # Create cert.pem and key.pem files for SSL encryption
 $ req -x509 -newkey rsa:4096 -nodes -out cert.pem -keyout key.pem -days 365
 
