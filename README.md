@@ -11,19 +11,19 @@ Docker must be configured to run Linux Docker containers. If it's not the case a
 
 ```shell
 # Change directory to project folder
-$ cd docker-openssl
+cd docker-openssl
 
 # Build Docker image
-$ docker build -t docker-openssl:latest .
+docker build -t docker-openssl:latest .
 
 # Run Docker container in interactive mode
 # Make sure you replace `<your_path>` with your target folder, this is where files will be created.
 
 # For Docker Desktop (Windows Pro)
-$ docker run -it --rm -v "C:\your_path:/openssl-certs" docker-openssl
+docker run -it --rm -v "C:\your_path\docker-openssl:/openssl-certs" docker-openssl
 
 # For Docker Toolbox (Windows Home)
-$ docker run -it --rm -v "/c/your_path:/openssl-certs" docker-openssl
+docker run -it --rm -v "/c/your_path:/openssl-certs" docker-openssl
 ```
 
 # Generate Keys
@@ -32,8 +32,11 @@ Once connected to the container, execute the following commands depending on you
 
 ```shell
 # Create cert.pem and key.pem files for SSL encryption
-$ req -x509 -newkey rsa:4096 -nodes -out cert.pem -keyout key.pem -days 365
+openssl req -x509 -newkey rsa:4096 -nodes -out cert.pem -keyout key.pem -days 365
 
-# You have some other commands in mind?
-# Feel free to do a pull request
+# Generate private key
+openssl genrsa -out rsa.private 1024
+
+# Generate corresponding public key
+openssl rsa -in rsa.private -out rsa.public -pubout -outform PEM
 ```
